@@ -8,6 +8,26 @@ The script was written in Python3.6, with two standard modules named os and json
 
 -------------------------------------------------------------------------------------------------
 
+Design:
+
+The script was written in one `.py` file simply because it is more readable.
+
+This app consists of a few functions:
+
+fetch_files() is to return a list of all the json files in the current folder in order to make the seaching range wider.
+
+show_terms(), a simple function to give the unique keys in each json.
+
+convert_dict() is a way to convert many-to-one relation lists into a dictionary, which will be hugly convenient when adding related fields into the searching result.
+
+build_relation(), using three methods to put the related fields to the return value based on the searching file option.
+
+search_result(), a simple input matching function.
+
+feedback() is a print out function.
+
+-------------------------------------------------------------------------------------------------
+
 Data entity relationship analysis:
 
 
@@ -74,6 +94,15 @@ User Instruction:
 
 6)The search for key and value is a full match and case sensitive.
 
-7)When searching for Boolean entry, please use `True` or `False` because this is the default setting in python.
 
-8)Searching for timestamp should use full match.
+------------------------------------------------------------------------------------------------
+
+Limitation:
+
+1)When searching for Boolean entry, need to use `True` or `False` because this is the default setting in python.
+
+2)when searching timestamp, only the exact full match can return a valid value, which is not the solution in real software development.
+
+3)This app repies on standard modules rather than more powerful third-party libs, because this is a more compatible way for developers to test. As a result, loops inevitably appear in the script, which might increase the time complexity when the files are extremely huge.
+A normal way is to use DB to hold records in different tables with primary keys, which could significantly imporve the efficiency.
+
