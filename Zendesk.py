@@ -99,11 +99,11 @@ def build_relation(type,result_set):
         return_set=[]
         for each in result_set:
             try:
-                each['users in this org']=user_in_org.get(each['_id'])
+                each['RELATION -- users in this org']=user_in_org.get(each['_id'])
             except:
                 pass
             try:
-                each['tickets in this org']=tic_in_org.get(each['_id'])
+                each['RELATION -- tickets in this org']=tic_in_org.get(each['_id'])
             except:
                 pass
             return_set.append(each)
@@ -127,15 +127,15 @@ def build_relation(type,result_set):
         return_set = []
         for each in result_set:
             try:
-                each['org name'] = org_name.get(each['organization_id'])
+                each['RELATION -- org name'] = org_name.get(each['organization_id'])
             except:
                 pass
             try:
-                each['tickets raised by this user'] = ticket_submitted.get(each['_id'])
+                each['RELATION -- tickets raised by this user'] = ticket_submitted.get(each['_id'])
             except:
                 pass
             try:
-                each['tickets assigned by this user'] = ticket_assignee.get(each['_id'])
+                each['RELATION -- tickets assigned by this user'] = ticket_assignee.get(each['_id'])
             except:
                 pass
             return_set.append(each)
@@ -156,15 +156,15 @@ def build_relation(type,result_set):
         return_set = []
         for each in result_set:
             try:
-                each['submitter name'] = user_name.get(each['submitter_id'])
+                each['RELATION -- submitter name'] = user_name.get(each['submitter_id'])
             except:
                 pass
             try:
-                each['assignee name'] = user_name.get(each['assignee_id'])
+                each['RELATION -- assignee name'] = user_name.get(each['assignee_id'])
             except:
                 pass
             try:
-                each['org name'] = org_name.get(each['organization_id'])
+                each['RELATION -- org name'] = org_name.get(each['organization_id'])
             except:
                 pass
             return_set.append(each)
