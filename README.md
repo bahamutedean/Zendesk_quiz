@@ -5,6 +5,8 @@ This is a simple app on CLI for json key value search
 
 The script was written in Python3.6, with two standard modules named os and json
 
+--------------------------------------------------------------------------------------------------
+
 User Instruction:
 
 1)Clone the file to local laptop
