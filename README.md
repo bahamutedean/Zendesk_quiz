@@ -30,10 +30,15 @@ EXAMPLE:
 
 when searching with `users`, whenever there is a match, it will return all the entris of `user` , `organization_name` , `subject` in a list when multiple entries for this user as a submitter or as an assignee.
 
+![alt text](users.png "user relation demo")
+
 when searching with `organizations`, it will deliver all `user name` of this org as well as all the ticket `subject` of this organization.
+
+![alt text](orgs.png "organization relation demo")
 
 when searching with `tickets`, this will fill the `organization_name` as well as the `name` of both `submitter` and `assginee`.
 
+![alt text](tickets.png "tickets relation demo")
 
 This app also supports one-to-many matches.
 
@@ -41,11 +46,17 @@ EXAMPLE:
 
 when searching with entities that have common values such as `active` and `status`, it will return all the matching results.
 
+![alt text](unusual.png "unusual search key relation demo")
+
+
 Apart from this, when if there is no such entity in the record, this will also give feedback when the value for that entity is empty.
 
 EXAMPLE:
 
-when searching for `timezone` that does not exist in some of the records, as long as the input for value is empty (a simple enter, or multiple whitespaces).
+when searching for `organization_id` that does not exist in some of the records, as long as the input for value is empty (a simple enter, or multiple whitespaces).
+
+![alt text](null.png "empty description relation demo")
+
 
 --------------------------------------------------------------------------------------------------
 
