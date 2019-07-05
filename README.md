@@ -73,3 +73,7 @@ User Instruction:
 5)Follow the instruction in the app
 
 6)The search for key and value is a full match and case sensitive.
+
+7)When searching for Boolean entry, please use `True` or `False` because this is the default setting in python.
+
+8)Searching for timestamp should use full match.
