@@ -84,7 +84,7 @@ def convert_dict(inputs):
 
 def build_relation(type,result_set):
 
-    if type == 'orgnizations':
+    if type == 'organizations':
         with open('users.json', 'r') as f:
             users = json.load(f)
         with open('tickets.json', 'r') as f:
