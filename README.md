@@ -26,6 +26,8 @@ search_result(), a simple input matching function.
 
 feedback() is a print out function.
 
+loop such as `for each` and `for k,v in each.items()` is used frequently here. This method will not cause significant searching time latency with the growing size of files because the number of returning records are limited.
+
 -------------------------------------------------------------------------------------------------
 
 Data entity relationship analysis:
