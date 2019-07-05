@@ -83,33 +83,42 @@ def convert_dict(inputs):
 
 
 def build_relation(type,result_set):
-
+    # to put relation to organization file search
     if type == 'organizations':
+        # make sure the files exist in the relative path
         with open('users.json', 'r') as f:
             users = json.load(f)
         with open('tickets.json', 'r') as f:
             tickets = json.load(f)
         # duplicates
+        # apparently org_id is the parent of user_id, so there will be one-to-many relationship
         user_in_org = [[each.get('organization_id'), [each.get('name')]] for each in users]
         # duplicates
+        # apparently org_id is the upper level of tickets, so there will be one-to-many relationship
         tic_in_org = [[each.get('organization_id'), [each.get('subject')]] for each in tickets]
+        # use a function to convert that relation into a dictionary for searching convenience
         user_in_org=convert_dict(user_in_org)
         tic_in_org = convert_dict(tic_in_org)
-
+        # an empty list, which will hold element in dictionary data type
         return_set=[]
         for each in result_set:
+            #using try is a way to avoid errors when executing each['_id'].
+            #because (each is a dict), when '_id' doesn't exist, each['_id'] will raise error while each.get('_id') will return a NULL value
             try:
+                # to show the users in this organization
                 each['RELATION -- users in this org']=user_in_org.get(each['_id'])
             except:
                 pass
             try:
+                # to show the tickets belong to this organization
                 each['RELATION -- tickets in this org']=tic_in_org.get(each['_id'])
             except:
                 pass
             return_set.append(each)
 
 
-
+    # to put relation to users file search
+    # same logic as above
     elif type == 'users':
         with open('organizations.json', 'r') as f:
             orgnizations = json.load(f)
@@ -127,14 +136,17 @@ def build_relation(type,result_set):
         return_set = []
         for each in result_set:
             try:
+                # converting the org_id into org_name, a way to build the relation
                 each['RELATION -- org name'] = org_name.get(each['organization_id'])
             except:
                 pass
             try:
+                # to show the tickets created by this user in this organization
                 each['RELATION -- tickets raised by this user'] = ticket_submitted.get(each['_id'])
             except:
                 pass
             try:
+                # to show the tickets assigned by this user in this organization
                 each['RELATION -- tickets assigned by this user'] = ticket_assignee.get(each['_id'])
             except:
                 pass
@@ -142,6 +154,9 @@ def build_relation(type,result_set):
 
 
     # type=='tickets'
+    # to put relation to tickets file search
+    # same logic as above
+
     else:
         with open('users.json', 'r') as f:
             users = json.load(f)
@@ -156,18 +171,23 @@ def build_relation(type,result_set):
         return_set = []
         for each in result_set:
             try:
+                #converting submitter_id into his name
                 each['RELATION -- submitter name'] = user_name.get(each['submitter_id'])
             except:
                 pass
             try:
+                #converting assignee_id into his name
                 each['RELATION -- assignee name'] = user_name.get(each['assignee_id'])
             except:
                 pass
             try:
+                #converting org_id into org_name
                 each['RELATION -- org name'] = org_name.get(each['organization_id'])
             except:
                 pass
             return_set.append(each)
+    #release memory
+    del result_set
     return return_set
 
 
