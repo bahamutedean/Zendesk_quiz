@@ -1,9 +1,18 @@
 # Zendesk_quiz
 
+Description:
 
 This is a simple app on CLI for json key value search
 
 The script was written in Python3.6, with two standard modules named os and json
+
+-------------------------------------------------------------------------------------------------
+
+Data entity relationship analysis
+
+
+
+
 
 --------------------------------------------------------------------------------------------------
 
