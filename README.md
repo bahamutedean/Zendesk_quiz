@@ -10,7 +10,7 @@ The script was written in Python3.6, with two standard modules named os and json
 
 Data entity relationship analysis
 
-
+![alt text](ER_DIAGRAM.png "The relationships between 3 files")
 
 
 
