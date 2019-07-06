@@ -10,6 +10,16 @@ The script was written in Python3.6, with two standard modules named os and json
 
 Design:
 
+The app was designed as a simple search for individual file.
+
+When searching for certain conditions, it will give all the result including `NONE` result as an object.
+
+If the result is not empty, it will start building the relation between the other two files based on different scenarios, which will get stored in the memory.
+
+All these relations will then be added in that object.
+
+
+
 The script was written in one `.py` file simply because it is more readable.
 
 This app consists of a few functions:
@@ -105,6 +115,6 @@ Limitation:
 
 2)when searching timestamp, only the exact full match can return a valid value, which is not the solution in real software development.
 
-3)This app repies on standard modules rather than more powerful third-party libs, because this is a more compatible way for developers to test. As a result, loops inevitably appear in the script, which might increase the time complexity when the files are extremely huge.
+3)This app repies on standard modules rather than more powerful third-party libs, because this is a more compatible way for developers to test. As a result, loops inevitably appear in the script, which might increase the memory occupied when the files are extremely huge.
 A normal way is to use DB to hold records in different tables with primary keys, which could significantly imporve the efficiency.
 
