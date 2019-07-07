@@ -56,7 +56,7 @@ each `_id` field in each file is unique, which could be considered as the primar
 
 Demo description:
 
-The script could handle certain kind of errors.
+a)The script could handle certain kind of errors.
 
 EXAMPLE:
 
@@ -68,7 +68,7 @@ When the input is not valid, it will fall into a loop until the input meets the 
 
 ![alt text](error2.png "Files missing")
 
-In order to minize the output of related fields, I decided to put more readable entry to represent the relations
+b)In order to minize the output of related fields, I decided to put more readable entry to represent the relations
 
 EXAMPLE:
 
@@ -84,7 +84,7 @@ when searching with `tickets`, this will fill the `organization_name` as well as
 
 ![alt text](tickets.png "tickets relation demo")
 
-This app also supports one-to-many matches.
+c)This app also supports one-to-many matches.
 
 EXAMPLE:
 
@@ -93,7 +93,7 @@ when searching with entities that have common values such as `active` and `statu
 ![alt text](unusual.png "unusual search key relation demo")
 
 
-Apart from this, when if there is no such entity in the record, this will also give feedback when the value for that entity is empty.
+d)Apart from this, when if there is no such entity in the record, this will also give feedback when the value for that entity is empty.
 
 EXAMPLE:
 
@@ -106,9 +106,17 @@ when searching for `organization_id` that does not exist in some of the records,
 
 User Instruction:
 
-1)Clone the file to local laptop
+1)Clone the repo to local laptop
 
-2)Make sure three json files are in the same directory as well as python3 is installed
+2)Make sure three json files are in the same directory as well as python3, together with `json` and `os` modules are installed
+
+open terminal on Mac or Linux, run `python3 --version`
+
+open terminal on Mac or Linux
+
+run `python3`
+
+input `import json` and `import os`, then `print(josn.__version__)` and `print(os.__version__)`
 
 3)Open terminal on Mac or Linux, run `cd <the directory of this .py file>`
 
