@@ -112,11 +112,15 @@ User Instruction:
 
 open terminal on Mac or Linux, run `python3 --version`
 
+![alt text](python_version.png "python version check")
+
 open terminal on Mac or Linux
 
 run `python3`
 
 input `import json` and `import os`, then `print(josn.__version__)`
+
+![alt text](module_version.png "check module version")
 
 3)Open terminal on Mac or Linux, run `cd <the directory of this .py file>`
 
