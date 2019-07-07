@@ -116,7 +116,7 @@ open terminal on Mac or Linux
 
 run `python3`
 
-input `import json` and `import os`, then `print(josn.__version__)` and `print(os.__version__)`
+input `import json` and `import os`, then `print(josn.__version__)`
 
 3)Open terminal on Mac or Linux, run `cd <the directory of this .py file>`
 
