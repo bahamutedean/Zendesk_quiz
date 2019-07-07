@@ -56,6 +56,18 @@ each `_id` field in each file is unique, which could be considered as the primar
 
 Demo description:
 
+The script could handle certain kind of errors.
+
+EXAMPLE:
+
+When the files do not exist in the current working directory, it will raise a notice about insufficient number of files.
+
+![alt text](error1.png "Files missing")
+
+When the input is not valid, it will fall into a loop until the input meets the requirement,
+
+![alt text](error2.png "Files missing")
+
 In order to minize the output of related fields, I decided to put more readable entry to represent the relations
 
 EXAMPLE:
