@@ -298,8 +298,13 @@ if __name__=='__main__':
     file_list = fetch_files()
     # in if clause, the script checks if all three files are all in the current directory, otherwise it will raise an error to abort the mission
     if file_list.__len__() < 3:
+        print('The files that exist in the current directory:')
+        for _ in file_list:
+            print(_.split('/')[-1])
+        print('\n')
         print('Insufficient files for the quiz, please check the current working directory\n')
-        raise FileExistsError
+        print('Mission aborted\n')
+        exit()
 
     # welcome interface
     print('Welcome to search interface')
