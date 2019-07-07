@@ -1,4 +1,4 @@
-# Zendesk_quiz
+# Zendesk Coding Challenge
 
 Description:
 
