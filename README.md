@@ -106,7 +106,7 @@ when searching for `organization_id` that does not exist in some of the records,
 
 User Instruction:
 
-1)Clone the repo to local laptop
+1)Clone the repo to local laptop, open terminal and run `sudo git clone https://github.com/bahamutedean/Zendesk_quiz.git`
 
 2)Make sure three json files are in the same directory as well as python3, together with `json` and `os` modules are installed
 
